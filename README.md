@@ -47,29 +47,50 @@ Os pinos de 2 a 11 e A0 são os exigidos pela especificação. Os LEDs de erro
 
 ## 2. Montagem
 
+Faça a fiação com a **mesa desligada** e o **USB do Arduino desconectado**.
+
 1. **GND comum**: ligue um pino `GND` do Arduino ao `GND` da mesa. Sem isso
    nada funciona de forma confiável.
-2. **Chaves**: SW0..SW5 → pinos 2..7. Chave na posição `1` = 5 V = sensor ativo.
-3. **LEDs**: pinos 8, 9, 10, 11 → LED3, LED2, LED1, LED0; pinos 12, 13, A1, A2
-   → LED4, LED5, LED6, LED7. Os LEDs da mesa acendem com nível alto.
-4. **Potenciômetro**: um extremo no `5V` do Arduino, o outro no `GND`, e o
-   cursor (terminal do meio) no `A0`. Assim `A0` lê de 0 V a 5 V.
-5. **USB**: alimenta a placa e serve para gravar e para o Serial Monitor.
+2. **Chaves**: SW0..SW5 (bloco "8 Bits Data Switches") → pinos 2..7.
+   Chave na posição `1` = 5 V = sensor ativo.
+3. **LEDs** (bloco "Bits LED Displays"): pinos 8, 9, 10, 11 → LED3, LED2,
+   LED1, LED0; pinos 12, 13, A1, A2 → LED4, LED5, LED6, LED7. Os LEDs da mesa
+   acendem com nível alto.
+4. **Potenciômetro** (bloco "Potentiometer"): um extremo no `5V` do Arduino, o
+   outro no `GND`, e o cursor (terminal do meio) no `A0`. Assim `A0` lê de 0 V
+   a 5 V.
+5. Coloque **todas as chaves SW0..SW5 em 0**.
+6. Ligue a mesa e conecte o **USB** do Arduino ao computador (alimenta a placa
+   e serve para gravar e para o Serial Monitor).
 
 ## 3. Compilar e gravar
 
-1. Abra `template_arduino_se.atsln` no **Microchip Studio**.
-2. Confira que a configuração ativa é **Debug** (a única com os includes e
-   defines do Arduino configurados).
-3. `Build → Build Solution` (**F7**). Gera `template_arduino_se\Debug\template_arduino_se.hex`.
-4. Feche qualquer Serial Monitor aberto (a porta não pode estar em uso).
-5. Execute `template_arduino_se\flash.bat`, escolha a COM do Arduino e aguarde.
-6. Abra um Serial Monitor (Arduino IDE, PuTTY, Data Visualizer…) na porta do
+1. Abra `template_arduino_se.atsln` (na raiz do repositório) no **Microchip
+   Studio**.
+2. Na barra de ferramentas, confira que a configuração ativa é **Debug** (a
+   única com os includes e defines do Arduino configurados; a Release não
+   compila).
+3. `Build → Build Solution` (**F7**). A janela *Output* deve terminar com
+   `Build succeeded`, e é gerado o arquivo
+   `template_arduino_se\Debug\template_arduino_se.hex`.
+4. Descubra a porta COM do Arduino: *Gerenciador de Dispositivos → Portas
+   (COM e LPT)* → "Arduino Uno (COMx)" ou "USB-SERIAL CH340 (COMx)".
+5. Feche qualquer Serial Monitor aberto (a porta não pode estar em uso).
+6. Abra a pasta `template_arduino_se` no Explorer e dê **dois cliques** em
+   `flash.bat` (ele procura o `.hex` na pasta `Debug` ao lado dele). Digite o
+   número da porta COM do Arduino e aguarde. Ao final deve aparecer
+   `avrdude: ... bytes of flash verified` e `avrdude done. Thank you.`
+7. Abra um Serial Monitor (Arduino IDE, PuTTY, Data Visualizer…) na porta do
    Arduino a **9600 bps**. A cada 0,5 s aparece uma linha como:
 
    ```
    st1=49.3C | s11=1 s12=0 s21=0 s22=0 s31=0 s32=0 | sm1_v1_aberta sm2_b1_ligada sm3_v2_fechada sm4_r1_desligada
    ```
+
+   Abrir o Serial Monitor reinicia a placa. Isso é normal e não atrapalha.
+
+> Para gravar de novo depois de alterar o código: F7 no Microchip Studio,
+> fechar o Serial Monitor e rodar o `flash.bat` outra vez.
 
 ## 4. Roteiro de teste funcional
 
@@ -99,7 +120,9 @@ você esperar mais que isso antes de voltar a chave, o LED reacende na hora.
 
 - Com `b1` ligada e SW1 em 0, coloque SW0 → 0: LED1 apaga **imediatamente**
   (bomba não pode trabalhar sem água).
-- Com `r1` ligada, coloque SW4 → 0: LED0 apaga **imediatamente**.
+- Com `r1` ligada e **SW5 em 0**, coloque SW4 → 0: LED0 apaga **imediatamente**.
+  (Se SW5 estiver em 1, desligar SW4 deixa o tanque 3 incoerente e a `sm3`
+  entra em erro – LED6.)
 
 **Estado de erro (falha segura):** com SW0 em 0, coloque SW1 em 1 (sensor de
 nível alto ativo sem o de nível baixo – fisicamente impossível). LED4 acende,
@@ -114,7 +137,18 @@ e SW5 sem SW4 (LED6). Para sair do erro, **pressione RESET na placa**.
 > potenciômetro gera 40..60 °C, esse erro nunca acontece no hardware — mas a
 > lógica foi mantida porque as máquinas de estados não podem ser alteradas.
 
-## 5. Como o código funciona (para a defesa)
+## 5. Problemas comuns
+
+| Sintoma | Causa provável |
+|---|---|
+| `flash.bat` diz "Nenhum arquivo .hex encontrado" | Não compilou em **Debug**, ou rodou o `.bat` fora da pasta `template_arduino_se` |
+| `avrdude: stk500_recv(): programmer is not responding` | Porta COM errada ou Serial Monitor aberto |
+| LEDs não acendem / chaves não fazem efeito | Falta o **GND comum** entre Arduino e mesa, ou mesa desligada |
+| Tudo apagado e um LED de erro (LED4–LED6) aceso | Chave de nível alto ligada sem a de nível baixo → corrigir as chaves e apertar **RESET** |
+| `st1` fica fixo em 40.0 ou 60.0 | Cursor do potenciômetro não está no `A0`, ou faltou ligar 5V/GND nos extremos |
+| Serial Monitor mostra caracteres estranhos | Velocidade diferente de **9600** |
+
+## 6. Como o código funciona (para a defesa)
 
 ### Arquitetura em camadas
 
@@ -166,7 +200,7 @@ central da atividade.
 `sm2`, `sm3` e `sm4` ficariam congeladas e a proteção da bomba não funcionaria.
 Com `millis()` cada máquina só "anota" quando deve agir e segue em frente.
 
-## 6. Simulador Qt e testes da Fase 2
+## 7. Simulador Qt e testes da Fase 2
 
 Continuam funcionando normalmente: o projeto Qt em `ap/win_x86_qt_gui` e os
 testes em `ap/tests` usam a HAL simulada e não dependem do Arduino.
