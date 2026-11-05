@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>1200</width><height>720</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>Automacao Predial Hidraulica - Agua Quente e Controle Termico</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="PipesView" name="pipes">
+    <property name="geometry">
+     <rect><x>0</x><y>0</y><width>1200</width><height>720</height></rect>
+    </property>
+   </widget>
+   <widget class="cedaTank" name="toolButton_t2">
+    <property name="geometry">
+     <rect><x>520</x><y>60</y><width>160</width><height>220</height></rect>
+    </property>
+    <property name="text">
+     <string>T2 - Caixa superior</string>
+    </property>
+   </widget>
+   <widget class="cedaTank" name="toolButton_t3">
+    <property name="geometry">
+     <rect><x>880</x><y>170</y><width>80</width><height>110</height></rect>
+    </property>
+    <property name="text">
+     <string>T3</string>
+    </property>
+   </widget>
+   <widget class="cedaTank" name="toolButton_t1">
+    <property name="geometry">
+     <rect><x>120</x><y>340</y><width>220</width><height>240</height></rect>
+    </property>
+    <property name="text">
+     <string>T1 - Cisterna</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_v1">
+    <property name="geometry">
+     <rect><x>100</x><y>258</y><width>20</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_v1">
+    <property name="geometry">
+     <rect><x>126</x><y>259</y><width>60</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>V1</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_s12">
+    <property name="geometry">
+     <rect><x>348</x><y>354</y><width>20</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_s12">
+    <property name="geometry">
+     <rect><x>374</x><y>355</y><width>40</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>S12</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_s11">
+    <property name="geometry">
+     <rect><x>348</x><y>546</y><width>20</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_s11">
+    <property name="geometry">
+     <rect><x>374</x><y>547</y><width>40</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>S11</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_overflow1">
+    <property name="geometry">
+     <rect><x>250</x><y>312</y><width>14</width><height>14</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ovf1">
+    <property name="geometry">
+     <rect><x>268</x><y>309</y><width>80</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>overflow</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_b1">
+    <property name="geometry">
+     <rect><x>495</x><y>420</y><width>20</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_b1">
+    <property name="geometry">
+     <rect><x>521</x><y>421</y><width>30</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>B1</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_s22">
+    <property name="geometry">
+     <rect><x>690</x><y>72</y><width>20</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_s22">
+    <property name="geometry">
+     <rect><x>716</x><y>73</y><width>40</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>S22</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_s21">
+    <property name="geometry">
+     <rect><x>690</x><y>248</y><width>20</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_s21">
+    <property name="geometry">
+     <rect><x>716</x><y>249</y><width>40</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>S21</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_overflow2">
+    <property name="geometry">
+     <rect><x>535</x><y>32</y><width>14</width><height>14</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ovf2">
+    <property name="geometry">
+     <rect><x>553</x><y>29</y><width>80</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>overflow</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_v2">
+    <property name="geometry">
+     <rect><x>770</x><y>296</y><width>20</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_v2">
+    <property name="geometry">
+     <rect><x>796</x><y>297</y><width>30</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>V2</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_s32">
+    <property name="geometry">
+     <rect><x>968</x><y>171</y><width>20</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_s32">
+    <property name="geometry">
+     <rect><x>994</x><y>172</y><width>40</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>S32</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_r1">
+    <property name="geometry">
+     <rect><x>968</x><y>215</y><width>20</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_r1">
+    <property name="geometry">
+     <rect><x>994</x><y>216</y><width>30</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>R1</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_s31">
+    <property name="geometry">
+     <rect><x>968</x><y>259</y><width>20</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_s31">
+    <property name="geometry">
+     <rect><x>994</x><y>260</y><width>40</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>S31</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_temp">
+    <property name="geometry">
+     <rect><x>880</x><y>130</y><width>260</width><height>28</height></rect>
+    </property>
+    <property name="text">
+     <string>Temperatura de T3: 25.0 C</string>
+    </property>
+    <property name="font">
+     <font><pointsize>11</pointsize><bold>true</bold></font>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar_temp">
+    <property name="geometry">
+     <rect><x>1070</x><y>170</y><width>24</width><height>110</height></rect>
+    </property>
+    <property name="minimum">
+     <number>0</number>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="value">
+     <number>25</number>
+    </property>
+    <property name="textVisible">
+     <bool>false</bool>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_sm1">
+    <property name="geometry">
+     <rect><x>560</x><y>380</y><width>310</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>SM1 (V1): -</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_sm2">
+    <property name="geometry">
+     <rect><x>560</x><y>404</y><width>310</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>SM2 (B1): -</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_sm3">
+    <property name="geometry">
+     <rect><x>560</x><y>428</y><width>310</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>SM3 (V2): -</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_sm4">
+    <property name="geometry">
+     <rect><x>560</x><y>452</y><width>310</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>SM4 (R1): -</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_dreno2">
+    <property name="geometry">
+     <rect><x>560</x><y>490</y><width>320</width><height>22</height></rect>
+    </property>
+    <property name="text">
+     <string>Consumo frio (dreno de T2)</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_dreno3">
+    <property name="geometry">
+     <rect><x>560</x><y>516</y><width>320</width><height>22</height></rect>
+    </property>
+    <property name="text">
+     <string>Consumo quente (dreno de T3)</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_sem_abastecimento">
+    <property name="geometry">
+     <rect><x>560</x><y>542</y><width>320</width><height>22</height></rect>
+    </property>
+    <property name="text">
+     <string>Cortar V1/B1 (isola T2 e T3)</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_falha_sm1">
+    <property name="geometry">
+     <rect><x>560</x><y>580</y><width>320</width><height>22</height></rect>
+    </property>
+    <property name="text">
+     <string>Injetar falha T1 (S12=1, S11=0)</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_falha_sm2">
+    <property name="geometry">
+     <rect><x>560</x><y>604</y><width>320</width><height>22</height></rect>
+    </property>
+    <property name="text">
+     <string>Injetar falha T2 (S22=1, S21=0)</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_falha_sm3">
+    <property name="geometry">
+     <rect><x>560</x><y>628</y><width>320</width><height>22</height></rect>
+    </property>
+    <property name="text">
+     <string>Injetar falha T3 (S32=1, S31=0)</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_falha_sm4">
+    <property name="geometry">
+     <rect><x>560</x><y>652</y><width>320</width><height>22</height></rect>
+    </property>
+    <property name="text">
+     <string>Injetar falha temp. (st1 = 120 C)</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_led_sm1_err">
+    <property name="geometry">
+     <rect><x>890</x><y>382</y><width>16</width><height>16</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_e1">
+    <property name="geometry">
+     <rect><x>914</x><y>380</y><width>200</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>sm1 erro</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_led_sm2_err">
+    <property name="geometry">
+     <rect><x>890</x><y>406</y><width>16</width><height>16</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_e2">
+    <property name="geometry">
+     <rect><x>914</x><y>404</y><width>200</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>sm2 erro</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_led_sm3_err">
+    <property name="geometry">
+     <rect><x>890</x><y>430</y><width>16</width><height>16</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_e3">
+    <property name="geometry">
+     <rect><x>914</x><y>428</y><width>200</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>sm3 erro</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_led_sm4_err">
+    <property name="geometry">
+     <rect><x>890</x><y>454</y><width>16</width><height>16</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_e4">
+    <property name="geometry">
+     <rect><x>914</x><y>452</y><width>200</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>sm4 erro</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_pump_dry">
+    <property name="geometry">
+     <rect><x>890</x><y>490</y><width>16</width><height>16</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_dry">
+    <property name="geometry">
+     <rect><x>914</x><y>488</y><width>250</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>B1 a seco (alarme)</string>
+    </property>
+   </widget>
+   <widget class="Led" name="toolButton_heater_dry">
+    <property name="geometry">
+     <rect><x>890</x><y>514</y><width>16</width><height>16</height></rect>
+    </property>
+    <property name="text">
+     <string>...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_hdry">
+    <property name="geometry">
+     <rect><x>914</x><y>512</y><width>250</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>R1 a seco (alarme)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_reset">
+    <property name="geometry">
+     <rect><x>890</x><y>560</y><width>160</width><height>28</height></rect>
+    </property>
+    <property name="text">
+     <string>Reset de falhas</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_cenario">
+    <property name="geometry">
+     <rect><x>890</x><y>600</y><width>290</width><height>20</height></rect>
+    </property>
+    <property name="text">
+     <string>Cenarios de validacao (spec):</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_cenario">
+    <property name="geometry">
+     <rect><x>890</x><y>622</y><width>290</width><height>26</height></rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>A - t2=100%, t3=0%</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>B - t2=50%, t3=0%</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>C - t2=0%, t3=100%</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>D - t2=10%, t3=89%</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>E - t2=50%, t3=15%, 50 C</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="pushButton_cenario">
+    <property name="geometry">
+     <rect><x>890</x><y>654</y><width>290</width><height>26</height></rect>
+    </property>
+    <property name="text">
+     <string>Carregar cenario</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>cedaTank</class>
+   <extends>QToolButton</extends>
+   <header>cedatank.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Led</class>
+   <extends>QToolButton</extends>
+   <header>led.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PipesView</class>
+   <extends>QWidget</extends>
+   <header>pipesview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
