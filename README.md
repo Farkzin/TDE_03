@@ -138,9 +138,10 @@ central da atividade.
   sua vez é chamada no `setup()`.
 - **`now()`**: devolve `millis()`. O `Chronometer` das máquinas calcula
   `now() + delta` e compara depois, sem travar o programa (sem `delay()`).
-- **`set_v1()` etc.**: `digitalWrite(pino, HIGH/LOW)`.
-- **`get_s11()` etc.**: `digitalRead(pino) == HIGH`. Chave em `1` → 5 V →
-  `true`.
+- **`set_v1()` etc.**: `digitalWrite(pino, state)`. O `true` vale 1 (`HIGH`,
+  LED aceso) e o `false` vale 0 (`LOW`, LED apagado).
+- **`get_s11()` etc.**: `return digitalRead(pino);`. Chave em `1` → 5 V →
+  `HIGH` (1) → `true`.
 - **`get_st1()`**: `analogRead(A0)` dá 0..1023 (0 V..5 V). A conversão é uma
   regra de três: `40 + (valor / 1023) * (60 - 40)` → 40,0..60,0 °C.
 - **`get_btn_reset()`**: retorna sempre `false`. A especificação diz que a

@@ -1,7 +1,7 @@
 #include "../common/hal.h"
 #include <Arduino.h>
 
-// Define quais pinos de entrada do arduino correspondem a cada um dos sensor dos tanques 
+// Define quais pinos de entrada do Arduino correspondem a cada um dos sensores dos tanques
 #define PIN_S11   2
 #define PIN_S12   3
 #define PIN_S21   4
@@ -9,7 +9,7 @@
 #define PIN_S31   6
 #define PIN_S32   7
 
-// Define quais pinos de saída do arduino correspondem a cada um dos atuadores (válvulas, bomba e resistência)
+// Define quais pinos de saída do Arduino correspondem a cada um dos atuadores (válvulas, bomba e resistência)
 #define PIN_V1    8
 #define PIN_V2    9
 #define PIN_B1    10
@@ -17,7 +17,7 @@
 
 #define PIN_ST1   A0 // Define o pino de entrada do sensor de temperatura do tanque 3
 
-// Define quais pinos de saída do arduino correspondem a cada um dos LEDs de erro
+// Define quais pinos de saída do Arduino correspondem a cada um dos LEDs de erro
 #define PIN_LED_SM1_ERR  12
 #define PIN_LED_SM2_ERR  13
 #define PIN_LED_SM3_ERR  A1
@@ -63,7 +63,7 @@ void init_hal(){
 
 // Retorna o tempo atual em milissegundos desde que o Arduino foi iniciado
 uint32_t now(){
-    return millis(); 
+    return millis();
 }
 
 // Chamadas pela state machine, liga ou desliga os LEDs dos atuadores
