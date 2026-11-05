@@ -318,6 +318,70 @@
       <SubType>compile</SubType>
       <Link>WString.h</Link>
     </Compile>
+    <Compile Include="..\ap\arduino\hal.cpp">
+      <SubType>compile</SubType>
+      <Link>hal.cpp</Link>
+    </Compile>
+    <Compile Include="..\ap\common\behavior.cpp">
+      <SubType>compile</SubType>
+      <Link>behavior.cpp</Link>
+    </Compile>
+    <Compile Include="..\ap\common\behavior.h">
+      <SubType>compile</SubType>
+      <Link>behavior.h</Link>
+    </Compile>
+    <Compile Include="..\ap\common\chronometer.cpp">
+      <SubType>compile</SubType>
+      <Link>chronometer.cpp</Link>
+    </Compile>
+    <Compile Include="..\ap\common\chronometer.h">
+      <SubType>compile</SubType>
+      <Link>chronometer.h</Link>
+    </Compile>
+    <Compile Include="..\ap\common\definitions.h">
+      <SubType>compile</SubType>
+      <Link>definitions.h</Link>
+    </Compile>
+    <Compile Include="..\ap\common\hal.h">
+      <SubType>compile</SubType>
+      <Link>hal.h</Link>
+    </Compile>
+    <Compile Include="..\ap\common\sm.h">
+      <SubType>compile</SubType>
+      <Link>sm.h</Link>
+    </Compile>
+    <Compile Include="..\ap\common\sm1.cpp">
+      <SubType>compile</SubType>
+      <Link>sm1.cpp</Link>
+    </Compile>
+    <Compile Include="..\ap\common\sm1.h">
+      <SubType>compile</SubType>
+      <Link>sm1.h</Link>
+    </Compile>
+    <Compile Include="..\ap\common\sm2.cpp">
+      <SubType>compile</SubType>
+      <Link>sm2.cpp</Link>
+    </Compile>
+    <Compile Include="..\ap\common\sm2.h">
+      <SubType>compile</SubType>
+      <Link>sm2.h</Link>
+    </Compile>
+    <Compile Include="..\ap\common\sm3.cpp">
+      <SubType>compile</SubType>
+      <Link>sm3.cpp</Link>
+    </Compile>
+    <Compile Include="..\ap\common\sm3.h">
+      <SubType>compile</SubType>
+      <Link>sm3.h</Link>
+    </Compile>
+    <Compile Include="..\ap\common\sm4.cpp">
+      <SubType>compile</SubType>
+      <Link>sm4.cpp</Link>
+    </Compile>
+    <Compile Include="..\ap\common\sm4.h">
+      <SubType>compile</SubType>
+      <Link>sm4.h</Link>
+    </Compile>
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
